@@ -6,7 +6,7 @@ import StatCard from '@/components/StatCard'
 import SignalPanel from '@/components/SignalPanel'
 import RiskGauge from '@/components/RiskGauge'
 import styles from '@/styles/Dashboard.module.css'
-import { TIER1_COINS, TIER2_COINS } from '@/lib/exchange'
+import { TIER1_COINS, TIER2_COINS } from '@/lib/coins'
 
 // Screener loaded client-side only (heavy table)
 const Screener = dynamic(() => import('@/components/Screener'), { ssr: false })
