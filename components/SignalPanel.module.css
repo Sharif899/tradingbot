@@ -1,0 +1,146 @@
+/* components/SignalPanel.module.css */
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 0;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.loadingText { margin-left: 8px; }
+
+.empty {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action { display: flex; align-items: center; gap: 12px; }
+
+.actionBadge {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.green { color: var(--green); }
+.red   { color: var(--red); }
+.amber { color: var(--amber); }
+
+.confidence {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.leverageBadge {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+.confBar {
+  height: 3px;
+  background: var(--bg-elevated);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.confFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+.confFill.green { background: var(--green); }
+.confFill.red   { background: var(--red); }
+.confFill.amber { background: var(--amber); }
+
+.section { display: flex; flex-direction: column; gap: 6px; }
+
+.sectionLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.reasoning {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+.factorItem, .riskItem {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.riskItem { color: var(--text-secondary); }
+
+.dot { font-size: 8px; margin-top: 3px; flex-shrink: 0; }
+
+.validation {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.approved { background: var(--green-dim); color: var(--green); border: 1px solid var(--green)33; }
+.rejected { background: var(--red-dim);   color: var(--red);   border: 1px solid var(--red)33; }
+
+.warning { color: var(--amber); font-size: 11px; }
+
+.executeBtn {
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 2px solid;
+  background: transparent;
+  transition: all 0.15s;
+}
+.executeBtn.green {
+  color: var(--green);
+  border-color: var(--green);
+}
+.executeBtn.green:hover { background: var(--green-dim); }
+.executeBtn.red {
+  color: var(--red);
+  border-color: var(--red);
+}
+.executeBtn.red:hover { background: var(--red-dim); }
+
+.liveWarning { color: var(--red); font-size: 11px; }

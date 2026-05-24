@@ -1,0 +1,74 @@
+/* components/RiskGauge.module.css */
+.container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gauge { display: flex; flex-direction: column; gap: 8px; }
+
+.gaugeLabelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bar {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 3px;
+  position: relative;
+  overflow: visible;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease, background 0.3s ease;
+}
+
+.marker {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 10px;
+  background: var(--amber);
+  border-radius: 1px;
+  opacity: 0.7;
+}
+
+.subtext {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.circuitBreaker {
+  background: var(--red-dim);
+  border: 1px solid var(--red);
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  animation: pulse 1s ease infinite;
+}

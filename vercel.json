@@ -1,0 +1,21 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "functions": {
+    "pages/api/signal.ts": {
+      "maxDuration": 30
+    },
+    "pages/api/trade/execute.ts": {
+      "maxDuration": 15
+    },
+    "pages/api/candles.ts": {
+      "maxDuration": 10
+    },
+    "pages/api/portfolio.ts": {
+      "maxDuration": 10
+    }
+  }
+}

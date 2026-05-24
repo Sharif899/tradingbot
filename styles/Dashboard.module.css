@@ -1,0 +1,309 @@
+/* styles/Dashboard.module.css */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerLeft { display: flex; align-items: baseline; gap: 12px; }
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blue);
+}
+
+.logoSub {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.headerCenter { display: flex; align-items: center; gap: 12px; }
+
+.lastUpdated {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ── Stats Row ──────────────────────────────────── */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.statsRow > * {
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+/* ── Main ────────────────────────────────────────── */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Left Column ─────────────────────────────────── */
+.left {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+/* ── Controls ────────────────────────────────────── */
+.controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.controlGroup { display: flex; flex-direction: column; gap: 6px; }
+
+.controlLabel {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.select {
+  min-width: 160px;
+}
+
+.tfGroup { display: flex; gap: 4px; }
+
+.tfBtn {
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border-radius: var(--radius-sm);
+}
+.tfBtn:hover { border-color: var(--border-light); color: var(--text-primary); }
+
+.tfActive {
+  background: var(--bg-elevated) !important;
+  border-color: var(--blue) !important;
+  color: var(--blue) !important;
+}
+
+.analyseBtn {
+  padding: 8px 20px;
+  background: var(--blue-dim);
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.analyseBtn:hover:not(:disabled) { background: #4cc9f033; }
+.analyseBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Trade details ───────────────────────────────── */
+.tradeDetails {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tdRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.tdRow:last-child { border-bottom: none; }
+.tdRow > span:first-child { color: var(--text-secondary); }
+
+/* ── Right Column ────────────────────────────────── */
+.right {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  background: var(--bg-base);
+}
+
+/* ── Log Panel ───────────────────────────────────── */
+.logPanel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.logHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logTitle {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.clearBtn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  background: none;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.clearBtn:hover { color: var(--text-secondary); }
+
+.logBody {
+  padding: 12px;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logEntry {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.logEmpty {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ── Config Panel ────────────────────────────────── */
+.configPanel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.configTitle {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.configRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.configRow .mono { color: var(--green); }
+
+.configNote {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+  .right { border-top: 1px solid var(--border); }
+}
+
+/* ── Tabs ────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  padding: 0 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: -1px;
+}
+.tab:hover { color: var(--text-secondary); }
+.tabActive { color: var(--blue) !important; border-bottom-color: var(--blue); }
+
+/* ── Screener tab layout ─────────────────────────── */
+.screenerTab {
+  grid-column: 1 / -1;
+  padding: 20px;
+}
+
+/* ── Symbol meta ──────────────────────────────────── */
+.symbolMeta { display: flex; align-items: center; gap: 8px; }
+.symbolName { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); }

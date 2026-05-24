@@ -1,0 +1,137 @@
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-base:     #080c10;
+  --bg-surface:  #0d1117;
+  --bg-elevated: #141b24;
+  --bg-hover:    #1c2530;
+
+  --border:      #1e2d3d;
+  --border-light:#2a3f55;
+
+  --text-primary:   #e2eaf3;
+  --text-secondary: #7a9ab5;
+  --text-muted:     #3d5269;
+
+  --green:     #00d68f;
+  --green-dim: #00d68f22;
+  --red:       #ff4d6d;
+  --red-dim:   #ff4d6d22;
+  --amber:     #ffb703;
+  --amber-dim: #ffb70322;
+  --blue:      #4cc9f0;
+  --blue-dim:  #4cc9f022;
+  --purple:    #b5a1ff;
+
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'Syne', sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 14px; }
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+/* Selection */
+::selection { background: var(--blue-dim); }
+
+/* Utility classes */
+.mono { font-family: var(--font-mono); }
+.text-green { color: var(--green); }
+.text-red { color: var(--red); }
+.text-amber { color: var(--amber); }
+.text-blue { color: var(--blue); }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge-green { background: var(--green-dim); color: var(--green); border: 1px solid var(--green)44; }
+.badge-red   { background: var(--red-dim);   color: var(--red);   border: 1px solid var(--red)44; }
+.badge-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber)44; }
+.badge-blue  { background: var(--blue-dim);  color: var(--blue);  border: 1px solid var(--blue)44; }
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  transition: all 0.15s ease;
+}
+button:active { transform: scale(0.98); }
+
+input, select {
+  font-family: var(--font-mono);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus { border-color: var(--blue); }
+
+/* Scanline overlay for terminal effect */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Animate in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.3s ease forwards; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+.pulse { animation: pulse 2s ease infinite; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.blink { animation: blink 1s step-end infinite; }
