@@ -1,0 +1,63 @@
+/**
+ * lib/coins.ts
+ * Coin lists only — no exchange imports.
+ * Safe to import from both client and server.
+ */
+
+export const TIER1_COINS = [
+  'BTC/USDT:USDT',
+  'ETH/USDT:USDT',
+  'BNB/USDT:USDT',
+  'SOL/USDT:USDT',
+  'XRP/USDT:USDT',
+  'ADA/USDT:USDT',
+  'AVAX/USDT:USDT',
+  'DOT/USDT:USDT',
+  'MATIC/USDT:USDT',
+  'LINK/USDT:USDT',
+]
+
+export const TIER2_COINS = [
+  'UNI/USDT:USDT',
+  'AAVE/USDT:USDT',
+  'CRV/USDT:USDT',
+  'MKR/USDT:USDT',
+  'SNX/USDT:USDT',
+  'COMP/USDT:USDT',
+  'SUSHI/USDT:USDT',
+  'BAL/USDT:USDT',
+  'NEAR/USDT:USDT',
+  'FTM/USDT:USDT',
+  'ONE/USDT:USDT',
+  'ALGO/USDT:USDT',
+  'ATOM/USDT:USDT',
+  'ICP/USDT:USDT',
+  'FIL/USDT:USDT',
+  'HBAR/USDT:USDT',
+  'VET/USDT:USDT',
+  'EGLD/USDT:USDT',
+  'XTZ/USDT:USDT',
+  'EOS/USDT:USDT',
+  'DOGE/USDT:USDT',
+  'SHIB/USDT:USDT',
+  'PEPE/USDT:USDT',
+  'WIF/USDT:USDT',
+  'BONK/USDT:USDT',
+  'AXS/USDT:USDT',
+  'SAND/USDT:USDT',
+  'MANA/USDT:USDT',
+  'IMX/USDT:USDT',
+  'GALA/USDT:USDT',
+  'OKB/USDT:USDT',
+  'CRO/USDT:USDT',
+  'KCS/USDT:USDT',
+  'LTC/USDT:USDT',
+  'BCH/USDT:USDT',
+  'ETC/USDT:USDT',
+  'TRX/USDT:USDT',
+  'XLM/USDT:USDT',
+  'CHZ/USDT:USDT',
+  'ZEC/USDT:USDT',
+]
+
+export const ALL_COINS = [...TIER1_COINS, ...TIER2_COINS]
