@@ -4,18 +4,18 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "functions": {
-    "pages/api/signal.ts": {
-      "maxDuration": 30
-    },
-    "pages/api/trade/execute.ts": {
-      "maxDuration": 15
-    },
-    "pages/api/candles.ts": {
-      "maxDuration": 10
-    },
-    "pages/api/portfolio.ts": {
-      "maxDuration": 10
+  "crons": [
+    {
+      "path": "/api/automate",
+      "schedule": "0 * * * *"
     }
+  ],
+  "functions": {
+    "pages/api/automate.ts": { "maxDuration": 60 },
+    "pages/api/signal.ts":   { "maxDuration": 30 },
+    "pages/api/screener.ts": { "maxDuration": 60 },
+    "pages/api/trade/execute.ts": { "maxDuration": 15 },
+    "pages/api/candles.ts":  { "maxDuration": 10 },
+    "pages/api/portfolio.ts": { "maxDuration": 10 }
   }
 }
