@@ -48,7 +48,7 @@ interface PaperTrade {
   closeReason: 'tp' | 'sl' | 'manual'
 }
 
-// ─── Coin universe ────────────────────────────────────────────────────────────
+
 // Format for Bybit USDT perpetuals: "SYMBOL/USDT:USDT"
 
 export const TIER1_COINS = [
