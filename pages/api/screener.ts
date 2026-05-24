@@ -11,7 +11,8 @@
  */
 
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { fetchCandles, TIER1_COINS, TIER2_COINS, ALL_COINS } from '@/lib/exchange'
+import { fetchCandles } from '@/lib/exchange'
+import { TIER1_COINS, TIER2_COINS, ALL_COINS } from '@/lib/coins'
 import { buildIndicators } from '@/lib/signalEngine'
 
 export interface ScreenerResult {
