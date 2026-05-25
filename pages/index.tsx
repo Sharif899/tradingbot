@@ -7,11 +7,9 @@ import SignalPanel from '@/components/SignalPanel'
 import RiskGauge from '@/components/RiskGauge'
 import styles from '@/styles/Dashboard.module.css'
 import { TIER1_COINS, TIER2_COINS } from '@/lib/coins'
-import dynamic from 'next/dynamic'
-const AutoTrader = dynamic(() => import('@/components/AutoTrader'), { ssr: false })
 
-// Screener loaded client-side only (heavy table)
 const Screener = dynamic(() => import('@/components/Screener'), { ssr: false })
+const AutoTrader = dynamic(() => import('@/components/AutoTrader'), { ssr: false })
 
 const ALL_SYMBOLS = [...TIER1_COINS, ...TIER2_COINS]
 const TIMEFRAMES = ['15m', '1h', '4h', '1d']
